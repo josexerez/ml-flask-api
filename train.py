@@ -5,8 +5,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
 df = pd.read_csv('dataset.csv')
-
-df['Gender'] = pd.get_dummies(df['Gender'], prefix='Gender')
+df = pd.get_dummies(df, columns=['Gender'])
+print(df)
 
 features = df.drop(['Spending Score (1-100)','CustomerID'], axis=1)
 target = df['Spending Score (1-100)']
