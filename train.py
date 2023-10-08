@@ -1,16 +1,13 @@
 import pandas as pd
 import pickle
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
 
 df = pd.read_csv('dataset.csv')
 df = pd.get_dummies(df, columns=['Gender'])
-print(df)
 
 features = df.drop(['Spending Score (1-100)','CustomerID'], axis=1)
+print(features)
 target = df['Spending Score (1-100)']
-
 
 random = RandomForestRegressor(n_estimators=3)
 random.fit(features,target)
