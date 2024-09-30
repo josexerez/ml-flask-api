@@ -1,7 +1,7 @@
 import pandas as pd
 import pickle
 from sklearn.ensemble import RandomForestRegressor
-
+# Cargamos dataset y OHE en gender
 df = pd.read_csv('dataset.csv')
 df = pd.get_dummies(df, columns=['Gender'])
 
